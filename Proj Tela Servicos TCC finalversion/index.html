@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proj Tela Servicos FInalVersion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <header>
+        <h1 class="logo">TechCar</h1>
+
+        <nav class="menu">
+            <a>Home</a>
+            <a>Sobre</a>
+            <a id="user">Usuário Ex</a>
+        </nav>
+     </header>
+
+     <div class="topText">
+       Crie Seu serviço
+     </div>
+     
+     <div class="Openbutton">
+        <button id="Openbutton" onclick="Start()">Começar</button>
+     </div>
+    
+
+     <section class="formArea">
+        
+
+        <form action="#" method="dialog" class="form" onsubmit="EnviarForm(),apagarCampos()">
+            <label for="nameClient">Nome do Cliente
+                <input type="text" id="nameClient" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="CPfClient">Cpf do Cliente
+                <input type="text" id="CPfClient" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="endressClient">Endereço do Cliente
+                <input type="text" id="endressClient" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="ageClient">Idade do Cliente
+                <input type="number" id="ageClient" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="contactClient">Telefone do Cliente
+                <input type="text" id="contactClient" placeholder="Digite Aqui" required>
+            </label>
+            <label for="emailClient">Email do Cliente
+                <input type="email" id="emailClient" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="modelCar"> Modelo do Carro
+                <input type="text" id="modelCar" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="plateCar"> Placa do Carro
+                <input type="text" id="plateCar" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="colorCar"> Cor do Carro
+                <input type="text" id="colorCar" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="fabricationAge"> Ano de Fabricação
+                <input type="date" id="fabricationAge" placeholder="Digite Aqui" required>
+            </label>
+
+            <label for="carEnginne"> Motorização do Carro
+                <input type="text" id="carEnginne" placeholder="Digite Aqui" required>
+            </label>
+
+            <label>
+               <button class="buttomForm" id="button-form" type="submit">Concluir</button>
+            </label>
+        </form>
+
+     </section>
+
+
+     <section class="Services">
+      
+     </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>

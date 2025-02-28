@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 10%;
+    background: rgb(0, 0, 58);
+}
+
+header .logo {
+    margin-left: 10%;
+    flex: 60%;
+    font-family: "Concert One", serif;
+    font-weight: 400;
+    color: rgb(247, 202, 80);
+    /*rgb(130, 255, 245)*/
+    font-weight: 400;
+    font-size: 29pt;
+}
+
+.menu {
+    flex: 30%;
+}
+
+.menu a {
+    background: rgb(247, 202, 80);
+    padding: 13px;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu a:hover {
+    border-top: 5px solid white;
+    padding: 15px;
+}
+
+.menu #user {
+    background: rgb(7, 31, 77);
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.menu #user:hover {
+    border-top: none;
+    background: rgb(216, 173, 54);
+}
+
+.topText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    font-size: 32pt;
+    font-family: "Concert One", serif;
+    color: rgb(247, 202, 80);
+
+
+}
+
+
+
+.formArea {
+    width: 95vw;
+    background: rgb(33, 22, 73);
+    border-radius: 10px;
+    margin-left: 2%;
+    display: none;
+}
+
+.formArea .form {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: 10%;
+    max-width: 100%;
+    border-radius: 10px;
+
+}
+
+.form label {
+    display: flex;
+    flex-flow: column;
+    width: 45%;
+    margin: 20px 0;
+    font-size: 20pt;
+    color: rgb(247, 202, 80);
+}
+
+.form input {
+    max-width: 45%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form input::placeholder {
+    font-size: 12pt;
+}
+
+
+
+.Openbutton {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+
+.Openbutton button {
+    padding: 20px;
+    max-width: 90%;
+    width: 40%;
+    border: none;
+    border-radius: 10px;
+    color: rgb(247, 202, 80);
+    font-size: 15pt;
+    cursor: pointer;
+}
+
+.StartClass {
+    animation: Start 1.5s ease-in-out forwards;
+    display: block !important;
+}
+
+.Openbutton button:hover {
+    padding: 25px;
+    background: rgb(247, 202, 80);
+    color: white;
+
+}
+
+.buttomForm {
+
+    background: white;
+    width: 45%;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 18pt;
+    color: rgb(247, 202, 80);
+}
+
+
+
+.buttomForm:hover {
+    background: rgb(185, 147, 147);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+@keyframes Start {
+
+    from {
+        opacity: 0;
+        height: 0;
+        display: none;
+
+    }
+
+
+
+    50% {
+        opacity: 0.7;
+        height: 70%;
+
+
+    }
+
+
+    to {
+        opacity: 1;
+        height: max-content;
+
+    }
+
+}
+
+
+
+
+/*Daqui para baixo é tudo sobre modal*/
+
+
+.Services {
+    margin-top: 14%;
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 100%;
+
+}
+
+.modal {
+    margin-left: 2%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: max-content;
+
+}
+
+.mainModal {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 50px;
+    box-shadow: 0 0 28px 0px black;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.modalTopText {
+    margin-bottom: 40%;
+    width: 200px;
+    height: 80px;
+    border-radius: 10px;
+    background: rgb(247, 202, 80);
+    text-align: center;
+    margin-left: 5%;
+}
+
+
+
+#open-modal,
+#removeService {
+
+    margin-left: 5%;
+    max-width: 90%;
+    max-height: 30%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#removeService {
+    max-width: 90% !important;
+    margin-top: 20%;
+    max-width: max-content;
+}
+
+#open-modal:hover {
+    background: rgb(128, 243, 143);
+}
+
+#removeService:hover {
+    background: red;
+}
+
+dialog.Modal-List {
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+dialog.Modal-List.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.Modal-List {
+    display: flex;
+    flex-flow: column wrap;
+    width: 800px;
+    border-radius: 10px;
+    z-index: 1;
+
+}
+
+.Modal-List .content {
+    margin: 16px 0;
+}
+
+.Modal-List label {
+
+    font-size: 15pt;
+    text-align: center;
+}
+
+.Modal-List #closeModal {
+    padding: 20px;
+    width: 30%;
+    max-height: max-content;
+    margin-left: 20%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.Modal-List #closeModal:hover {
+    background: red;
+}
