@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário100%</title>
+</head>
+
+<body>
+    <div class="content">
+        <!-- estará na esquerda do site, uma estilização para não ficar tão cru -->
+        <div class="description_left">
+            <h1>Seja bem vindo ao nosso Site
+                <br>
+                Faça sua inscrição
+            </h1>
+
+            <img src="./img/Forms.gif" alt="uma bela imagem">
+        </div>
+
+        <!-- estará na direita do site, onde estará o formulário -->
+        <div class="content_right">
+            <div class="form">
+                <form action="#" method="dialog">
+                    <!-- nome -->
+                    <label for="name">
+                        <h2>Nome</h2>
+                        <input type="text" id="name" placeholder="Digite aqui" required>
+                    </label>
+
+                    <!-- sobrenome -->
+                    <label for="surname">
+                        <h2>Sobrenome</h2>
+                        <input type="text" id="surname" placeholder="Digite aqui" required>
+                    </label>
+                    <!-- email -->
+                    <label for="email">
+                        <h2>Email</h2>
+                        <input type="email" id="email" placeholder="Digite aqui" required>
+                    </label>
+
+                    <!-- senha -->
+                    <label for="password">
+                        <h2>Senha</h2>
+                        <input type="password" id="password" placeholder="Digite aqui" required>
+                    </label>
+
+                    <div class="button">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+                <div class="bottom_content">
+                    <p>Já tem uma conta? <a href="#">Clique aqui</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
