@@ -135,7 +135,13 @@ h1 {
 }
 
 /* mediaQuerys */
-@media (max-width: 768px) {
+@media ((width >=800px) and (width <=1000px)) {
+    .content {
+        gap: 7%;
+    }
+}
+
+@media (width <=800px) {
     .content {
         flex-direction: column;
     }
