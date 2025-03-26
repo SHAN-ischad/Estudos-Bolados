@@ -6,11 +6,11 @@ const [width, height] = [Dimensions.get('window').width, Dimensions.get('window'
 
 export function HeaderService() {
     return (
-        <View className='h-dvh w-full bg-white'>
+        <View className=' w-full bg-white'>
 
             {/* header */}
 
-            <View className='w-full   justify-between  rounded-b-lg items-center  flex-row ' >
+            <View className='w-full justify-between  rounded-b-lg items-center  flex-row ' >
 
                 {/* area name */}
                 <View>

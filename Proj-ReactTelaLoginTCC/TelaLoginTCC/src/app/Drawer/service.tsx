@@ -14,19 +14,18 @@ export default function Service() {
 
     if (isLoading) {
         return <View className='h-full w-full bg-white justify-center items-center'><Text>Carregando...</Text></View>
-    }
-    return (
-        <View className='h-full w-full bg-white' >
-            <View >
-                <HeaderService />
-            </View>
+    } else {
+        return (
+            <View className='h-full w-full bg-white ' >
+                <View className=''>
+                    <HeaderService />
+                </View>
 
-            <View className='h-full bg-black'>
-                <TextInput placeholder='Digite um nome ao serviço' className='p-[10px] bg-black' />
-                <Pressable>
-                    <Text selectable={false}>Criar</Text>
-                </Pressable>
+                <View className='w-full ml-[5%] mt-[10%]' >
+                    <ContentPage />
+                </View>
             </View>
-        </View>
-    );
+        );
+    }
+
 }
