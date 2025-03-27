@@ -26,6 +26,10 @@ export default function Index() {
     // um design responsivo
     const { width, height } = Dimensions.get('window');
 
+    const casdasterPage = () => {
+        router.replace('./cadastro');
+    }
+
     return (
         <View className='h-full w-full justify-center items-center flex-row bg-white' style={{
             flexDirection: width <= 800 ? 'column' : 'row', //ajustando o flex-direction para mobile
@@ -41,8 +45,8 @@ export default function Index() {
                     }} >Bem vindo ao nosso site. Faça seu Login</Text>
                 </View>
                 <Image style={{
-                    height: height <= 800 ? 250 : 400,
-                    width: width <= 800 ? 250 : 400,
+                    height: height <= 800 ? 250 : 600,
+                    width: width <= 800 ? 250 : 600,
                 }} source={require('../../assets/images/Securelogin.gif')} />
             </View>
 
@@ -69,14 +73,14 @@ export default function Index() {
                 />
 
                 <Pressable
-                    className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0]'
+                    className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%]'
                     onPress={handleSubmit}
                 >
                     <Text selectable={false}>Cadastrar</Text>
                 </Pressable>
-                <View className='mt-[10px] flex-row gap-1' >
-                    <Text className='font-bold text-[10pt]' selectable={false}>Não tem conta?</Text>
-                    <Pressable><Text className='text-[10pt]' style={{ color: 'blue' }}>Faça Seu cadastro</Text></Pressable>
+                <View className='mt-[10px] flex-row gap-2' >
+                    <Text className='font-bold text-[11pt]' selectable={false}>Não tem conta?</Text>
+                    <Pressable><Text className='text-[11pt] font-bold' style={{ color: 'blue' }} onPress={casdasterPage}>Faça Seu cadastro</Text></Pressable>
                 </View>
             </View>
         </View >
