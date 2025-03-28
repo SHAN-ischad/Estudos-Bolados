@@ -13,15 +13,22 @@ export default function Service() {
     }, [])
 
     if (isLoading) {
-        return <View className='h-full w-full bg-white justify-center items-center'><Text>Carregando...</Text></View>
+        return <View className='h-full w-full bg-white justify-center 
+        items-center'><Text>Carregando...</Text></View>
     } else {
         return (
-            <View className='h-full w-full bg-white ' >
+            <View className='h-full w-full bg-white overflow-auto overflow-x-hidden ' >
                 <View className=''>
                     <HeaderService />
                 </View>
 
-                <View className='w-full ml-[5%] mt-[10%]' >
+                <View className='w-full items-center mt-[5%]'>
+                    {/* Top Text */}
+                    <Text className='font-bold text-[20pt]'>Bem vindo a área de serviços</Text>
+                    <Text className='font-bold text-[20pt]'>Crie seus serviços e configure-os</Text>
+                </View>
+
+                <View className='w-full mt-[10%]' >
                     <ContentPage />
                 </View>
             </View>
