@@ -28,7 +28,7 @@ export default function Service() {
                     <Text className='font-bold text-[20pt]'>Crie seus serviços e configure-os</Text>
                 </View>
 
-                <View className='w-full mt-[10%]' >
+                <View className='w-full mt-[5%]' >
                     <ContentPage />
                 </View>
             </View>

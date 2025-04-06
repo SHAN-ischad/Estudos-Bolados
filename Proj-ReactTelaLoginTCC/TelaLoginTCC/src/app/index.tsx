@@ -1,6 +1,7 @@
 import { View, TextInput, Image, Text, Pressable, Alert, Dimensions } from 'react-native';
 import { useState } from 'react';
 import { useRouter } from 'expo-router';
+import { styled } from '../style/style';
 export default function Index() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -39,23 +40,26 @@ export default function Index() {
 
             <View className='h-full w-fit items-center justify-center mr-[10%] flex-[100%] ' style={{ marginBottom: width <= 1000 ? 20 : 0 }}>
                 <View className='h-fit pb-[20%] ' style={{ marginTop: width <= 730 ? 10 : 0 }}>
-                    <Text className='font-bold text-[28pt] mt-[2%]' style={{
+                    <Text className='font-bold' style={{
+                        fontFamily: styled.fonts.fontFamily,
                         fontSize: width <= 1000 ? 17 : 28,
                         marginTop: width <= 1000 ? '6%' : 0
                     }} >Bem vindo ao nosso site. Faça seu Login</Text>
                 </View>
                 <Image style={{
-                    height: height <= 800 ? 250 : 600,
-                    width: width <= 800 ? 250 : 600,
+                    height: height <= 800 ? 250 : 390,
+                    width: width <= 800 ? 250 : 390,
                 }} source={require('../../assets/images/Securelogin.gif')} />
             </View>
 
             {/* formulário de login */}
 
-            <View className='h-full w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[100%]' style={{ width: width <= 1000 ? '100%' : '40%' }}>
+            <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[100%]' style={{ width: width <= 1000 ? '100%' : '40%' }}>
                 <Text className='text-[22pt] text-center font-bold ' style={{ color: 'blue' }}>TechCar</Text>
 
-                <Text className='font-bold text-[15pt] mb-[10px] mt-[20px]'>Escreva seu email</Text>
+                <Text className='font-bold text-[16pt] mb-[10px] mt-[20px]' style={{
+                    fontFamily: styled.fonts.fontFamily,
+                }}>Escreva seu email</Text>
                 <TextInput
                     className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
                     placeholder='escreva aqui'
@@ -63,7 +67,10 @@ export default function Index() {
                     onChangeText={setEmail}
                 />
 
-                <Text className='font-bold text-[15pt] mb-[10px]'>Escreva sua senha</Text>
+                <Text className='font-bold text-[15pt] mb-[10px]' style={{
+                    fontFamily: styled.fonts.fontFamily,
+
+                }}>Escreva sua senha</Text>
                 <TextInput
                     className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
                     placeholder='escreva aqui'
@@ -80,7 +87,7 @@ export default function Index() {
                 </Pressable>
                 <View className='mt-[10px] flex-row gap-2' >
                     <Text className='font-bold text-[11pt]' selectable={false}>Não tem conta?</Text>
-                    <Pressable><Text className='text-[11pt] font-bold' style={{ color: 'blue' }} onPress={casdasterPage}>Faça Seu cadastro</Text></Pressable>
+                    <Pressable><Text className='text-[11pt] font-bold text-blue-600 hover:text-red-500 duration-[0.4s]' onPress={casdasterPage}>Faça Seu cadastro</Text></Pressable>
                 </View>
             </View>
         </View >
