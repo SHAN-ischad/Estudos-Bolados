@@ -2,6 +2,7 @@ import { View, TextInput, Image, Text, Pressable, Alert, Dimensions } from 'reac
 import { useState } from 'react';
 import { useRouter } from 'expo-router';
 import { styled } from '../style/style';
+import { TechCar } from '../components/atoms/logoTechCar';
 export default function Index() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -55,6 +56,8 @@ export default function Index() {
             {/* formulário de login */}
 
             <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[100%]' style={{ width: width <= 1000 ? '100%' : '40%' }}>
+                <TechCar height={150} widht={150} marginBottom={10} />
+
                 <Text className='text-[22pt] text-center font-bold ' style={{ color: 'blue' }}>TechCar</Text>
 
                 <Text className='font-bold text-[16pt] mb-[10px] mt-[20px]' style={{

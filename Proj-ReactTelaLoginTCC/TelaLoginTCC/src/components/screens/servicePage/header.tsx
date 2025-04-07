@@ -1,5 +1,6 @@
 import { View, Text, Dimensions } from 'react-native';
 import { ButtonDrawer } from '../../../components/atoms/buttonDrawer';
+import { TechCar } from '../../atoms/logoTechCar';
 
 
 const [width, height] = [Dimensions.get('window').width, Dimensions.get('window').height];
@@ -12,14 +13,9 @@ export function HeaderService() {
 
             <View className='w-full justify-between  rounded-b-lg items-center  flex-row ' >
 
-                {/* area name */}
-                <View>
-                    <Text className='font-bold text-[19pt] text-black ml-[5px]' style={{
-                        fontSize: width <= 800 ? 22 : 26,
-                    }} selectable={false}>Area de Serviços</Text>
-                </View>
-
-                <View>
+                {/* logo TechCar */}
+                <TechCar height={130} widht={130} marginBottom={0} />
+                <View className='top-[-45px]'>
                     {/* Button Drawer */}
                     <ButtonDrawer />
                 </View>
