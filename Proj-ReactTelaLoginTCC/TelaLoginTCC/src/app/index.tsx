@@ -43,20 +43,23 @@ export default function Index() {
                 <View className='h-fit pb-[20%] ' style={{ marginTop: width <= 730 ? 10 : 0 }}>
                     <Text className='font-bold' style={{
                         fontFamily: styled.fonts.fontFamily,
-                        fontSize: width <= 1000 ? 17 : 28,
+                        fontSize: width <= 1000 ? 17 : 42,
                         marginTop: width <= 1000 ? '6%' : 0
                     }} >Bem vindo ao nosso site. Faça seu Login</Text>
                 </View>
                 <Image style={{
-                    height: height <= 800 ? 250 : 390,
-                    width: width <= 800 ? 250 : 390,
+                    height: height <= 800 ? 200 : 500,
+                    width: width <= 800 ? 490 : 500,
                 }} source={require('../../assets/images/Securelogin.gif')} />
             </View>
 
             {/* formulário de login */}
 
-            <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[100%]' style={{ width: width <= 1000 ? '100%' : '40%' }}>
-                <TechCar height={150} widht={150} marginBottom={10} />
+            <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[100%]' style={{
+                width: width <= 1000 ? '100%' : '40%',
+                backgroundColor: width <= 800 ? 'white' : 'blue-300',
+            }}>
+                <TechCar heightImage={150} widhtImage={150} marginBottom={10} />
 
                 <Text className='text-[22pt] text-center font-bold ' style={{ color: 'blue' }}>TechCar</Text>
 
@@ -64,10 +67,14 @@ export default function Index() {
                     fontFamily: styled.fonts.fontFamily,
                 }}>Escreva seu email</Text>
                 <TextInput
-                    className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
+                    className='w-[45%] p-[12px] bg-white rounded-[5px] mb-[20px]'
                     placeholder='escreva aqui'
                     value={email}
                     onChangeText={setEmail}
+                    style={{
+                        borderColor: width <= 800 ? 'black' : 'none',
+                        borderWidth: width <= 800 ? 1 : 0,
+                    }}
                 />
 
                 <Text className='font-bold text-[15pt] mb-[10px]' style={{
@@ -75,16 +82,23 @@ export default function Index() {
 
                 }}>Escreva sua senha</Text>
                 <TextInput
-                    className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
+                    className='w-[45%] p-[12px] bg-white rounded-[5px] mb-[20px]'
                     placeholder='escreva aqui'
                     keyboardType='visible-password'
                     value={password}
                     onChangeText={setPassword}
+                    style={{
+                        borderColor: width <= 800 ? 'black' : 'none',
+                        borderWidth: width <= 800 ? 1 : 0,
+                    }}
                 />
 
                 <Pressable
-                    className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%]'
+                    className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%] hover:translate-x-[15px]'
                     onPress={handleSubmit}
+                    style={{
+                        backgroundColor: width <= 800 ? '#006dff' : 'white',
+                    }}
                 >
                     <Text selectable={false}>Cadastrar</Text>
                 </Pressable>
