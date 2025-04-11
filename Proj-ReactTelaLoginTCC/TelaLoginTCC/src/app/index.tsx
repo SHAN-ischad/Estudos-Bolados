@@ -3,10 +3,15 @@ import { useState } from 'react';
 import { useRouter } from 'expo-router';
 import { styled } from '../style/style';
 import { TechCar } from '../components/atoms/logoTechCar';
+
 export default function Index() {
+    let cadasterButtom
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
+
+
+
 
     // Funcão de verificação de formulários para o usuário não conseguir enviar um formulário vazio
     const handleSubmit = () => {
@@ -28,6 +33,36 @@ export default function Index() {
     // um design responsivo
     const { width, height } = Dimensions.get('window');
 
+    // função que troca a cor do botão de cadastro
+    const ButtonCadaster = () => {
+        if (width <= 800) {
+            return (
+                cadasterButtom =
+                <View >
+                    <Pressable className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%] hover:translate-x-[15px] shadow-md'
+                        onPress={handleSubmit}>
+                        <Text selectable={false}>Cadastrar</Text>
+
+                    </Pressable>
+
+                </View>)
+
+        } else {
+            return (
+                <Pressable
+                    className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%] hover:translate-x-[15px]'
+                    onPress={handleSubmit}
+                    style={{
+                        backgroundColor: width <= 800 ? '#006dff' : 'white',
+                    }}
+                >
+                    <Text selectable={false}>Cadastrar</Text>
+                </Pressable>
+            )
+        }
+    }
+
+
     const casdasterPage = () => {
         router.replace('./cadastro');
     }
@@ -39,17 +74,20 @@ export default function Index() {
 
         }} >
 
-            <View className='h-full w-fit items-center justify-center mr-[10%] flex-[100%] ' style={{ marginBottom: width <= 1000 ? 20 : 0 }}>
+            <View className='h-full w-fit items-center justify-center mr-[10%] flex-[100%] ' style={{
+                marginBottom: width <= 1000 ? 20 : 0,
+                display: width <= 800 ? 'none' : 'flex'
+            }}>
                 <View className='h-fit pb-[20%] ' style={{ marginTop: width <= 730 ? 10 : 0 }}>
                     <Text className='font-bold' style={{
                         fontFamily: styled.fonts.fontFamily,
-                        fontSize: width <= 1000 ? 17 : 42,
+                        fontSize: width <= 1000 ? 17 : 28,
                         marginTop: width <= 1000 ? '6%' : 0
                     }} >Bem vindo ao nosso site. Faça seu Login</Text>
                 </View>
                 <Image style={{
-                    height: height <= 800 ? 200 : 500,
-                    width: width <= 800 ? 490 : 500,
+                    height: height <= 800 ? 250 : 390,
+                    width: width <= 800 ? 250 : 390,
                 }} source={require('../../assets/images/Securelogin.gif')} />
             </View>
 
@@ -57,9 +95,9 @@ export default function Index() {
 
             <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[100%]' style={{
                 width: width <= 1000 ? '100%' : '40%',
-                backgroundColor: width <= 800 ? 'white' : 'blue-300',
+                backgroundColor: width <= 800 ? 'white' : '',
             }}>
-                <TechCar heightImage={150} widhtImage={150} marginBottom={10} />
+                <TechCar height={150} widht={150} marginBottom={15} />
 
                 <Text className='text-[22pt] text-center font-bold ' style={{ color: 'blue' }}>TechCar</Text>
 
@@ -67,14 +105,14 @@ export default function Index() {
                     fontFamily: styled.fonts.fontFamily,
                 }}>Escreva seu email</Text>
                 <TextInput
-                    className='w-[45%] p-[12px] bg-white rounded-[5px] mb-[20px]'
+                    className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
+                    style={{
+                        backgroundColor: width <= 800 ? 'whitesmoke' : 'white',
+                        width: width <= 800 ? '45%' : '100%'
+                    }}
                     placeholder='escreva aqui'
                     value={email}
                     onChangeText={setEmail}
-                    style={{
-                        borderColor: width <= 800 ? 'black' : 'none',
-                        borderWidth: width <= 800 ? 1 : 0,
-                    }}
                 />
 
                 <Text className='font-bold text-[15pt] mb-[10px]' style={{
@@ -82,26 +120,18 @@ export default function Index() {
 
                 }}>Escreva sua senha</Text>
                 <TextInput
-                    className='w-[45%] p-[12px] bg-white rounded-[5px] mb-[20px]'
+                    className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
+                    style={{
+                        backgroundColor: width <= 800 ? 'whitesmoke' : 'white',
+                        width: width <= 800 ? '45%' : '100%',
+                    }}
                     placeholder='escreva aqui'
-                    keyboardType='visible-password'
                     value={password}
                     onChangeText={setPassword}
-                    style={{
-                        borderColor: width <= 800 ? 'black' : 'none',
-                        borderWidth: width <= 800 ? 1 : 0,
-                    }}
                 />
 
-                <Pressable
-                    className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%] hover:translate-x-[15px]'
-                    onPress={handleSubmit}
-                    style={{
-                        backgroundColor: width <= 800 ? '#006dff' : 'white',
-                    }}
-                >
-                    <Text selectable={false}>Cadastrar</Text>
-                </Pressable>
+                {ButtonCadaster()}
+
                 <View className='mt-[10px] flex-row gap-2' >
                     <Text className='font-bold text-[11pt]' selectable={false}>Não tem conta?</Text>
                     <Pressable><Text className='text-[11pt] font-bold text-blue-600 hover:text-red-500 duration-[0.4s]' onPress={casdasterPage}>Faça Seu cadastro</Text></Pressable>

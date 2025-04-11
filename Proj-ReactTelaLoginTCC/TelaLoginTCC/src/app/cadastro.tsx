@@ -8,8 +8,6 @@ import { Dimensions } from 'react-native';
 import { TechCar } from '../components/atoms/logoTechCar';
 
 export default function Cadastro() {
-
-
     const [width, height] = [Dimensions.get('window').width, Dimensions.get('window').height];
 
     const [isLoading, setIsLoading] = useState(true);
@@ -54,11 +52,12 @@ export default function Cadastro() {
                     }} source={require('../../assets/images/Computer.gif')} />
 
                 </View>
-                <View className=' h-[65%] w-[35%] rounded-[8px] text-white shadow-md items-center  justify-center  ' style={{
+                <View className=' h-fit pb-[2%] w-[35%] rounded-[8px] text-white shadow-md items-center  justify-center  ' style={{
                     width: width <= 800 ? '90%' : '35%',
                 }}>
-                    <TechCar heightImage={100} widhtImage={100} />
-
+                    <TechCar
+                        height={170}
+                        widht={170} />
                     <Text className='text-[15pt] mb-[12px] font-bold '>Cadastro</Text>
                     {/* nome */}
                     <Text className='text-[15pt] font-bold mb-[10px]'>Digite seu nome</Text>

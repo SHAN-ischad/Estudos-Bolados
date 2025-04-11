@@ -1,17 +1,17 @@
 import { View, Image } from 'react-native';
 
 interface Scale {
-    widhtImage: number,
-    heightImage: number,
+    widht: number,
+    height: number,
     marginBottom?: number,
 }
 
-export function TechCar({ widhtImage, heightImage, marginBottom }: Scale) {
+export function TechCar({ widht, height, marginBottom }: Scale) {
     return (
         <View >
             <Image source={require("@/assets/images/Techcar.png")} style={{
-                width: widhtImage,
-                height: heightImage,
+                width: widht,
+                height: height,
                 marginBottom: marginBottom
             }} />
         </View>
