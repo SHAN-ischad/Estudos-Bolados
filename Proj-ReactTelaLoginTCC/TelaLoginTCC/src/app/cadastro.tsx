@@ -1,13 +1,19 @@
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { View, Text, Pressable, Image } from 'react-native';
+import { View, Text, Pressable, Image, Alert } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { ButtonEnv } from '../components/atoms/buttonEnv';
 import { styled } from '../style/style';
 import { Dimensions } from 'react-native';
 import { TechCar } from '../components/atoms/logoTechCar';
 
 export default function Cadastro() {
+    const [userName, setUserName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [userPassword, setUserPassword] = useState('');
+
+
+
     const [width, height] = [Dimensions.get('window').width, Dimensions.get('window').height];
 
     const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +25,18 @@ export default function Cadastro() {
     }, [])
 
     const redirect = () => {
-        router.replace('/Drawer/service');
+
+        // condicional para verificar se o usuário preencheu os campos corretamente,
+        // dentro de uma função
+        if (userName.trim() === '' || userEmail.trim() === '' || userPassword.trim() === '') {
+            Alert.alert('Error, Preencha todos os campos para se cadastrar!')
+            alert('Error, Preencha todos os campos para se cadastrar!')
+        } else {
+            Alert.alert('Sucesso. Cadastro realizado com sucesso!')
+            alert('Sucesso. Cadastro realizado com sucesso!')
+            router.replace('/Drawer/service');
+        }
+
     }
 
     if (isLoading) {
@@ -61,20 +78,26 @@ export default function Cadastro() {
                     <Text className='text-[15pt] mb-[12px] font-bold '>Cadastro</Text>
                     {/* nome */}
                     <Text className='text-[15pt] font-bold mb-[10px]'>Digite seu nome</Text>
-                    <TextInput className='p-[12px] rounded-[5px] shadow-md w-[50%] mb-[15px] text-black bg-white' placeholder='Digite aqui' />
+                    <TextInput
+                        value={userName}
+                        onChangeText={setUserName}
+                        className='p-[12px] rounded-[5px] shadow-md w-[50%] mb-[15px] text-black bg-white' placeholder='Digite aqui' />
 
                     {/* email */}
                     <Text className='text-[15pt] font-bold mb-[10px]'>Digite seu email</Text>
-                    <TextInput className='p-[12px] rounded-[5px] shadow-md w-[50%] mb-[15px] text-black bg-white' placeholder='Digite aqui' />
+                    <TextInput
+                        value={userEmail}
+                        onChangeText={setUserEmail}
+                        className='p-[12px] rounded-[5px] shadow-md w-[50%] mb-[15px] text-black bg-white' placeholder='Digite aqui' />
 
                     {/* senha */}
                     <Text className='text-[15pt] font-bold mb-[10px]'>Digite sua senha</Text>
-                    <TextInput className='p-[12px] rounded-[5px] shadow-md w-[50%] bg-white text-black' placeholder='Digite aqui' />
+                    <TextInput
+                        value={userPassword}
+                        onChangeText={setUserPassword}
+                        className='p-[12px] rounded-[5px] shadow-md w-[50%] bg-white text-black' placeholder='Digite aqui' />
 
-                    <Pressable onPress={redirect} className='w-[30%] gap-[5px] py-[15px] flex-row justify-center rounded-[5px] bg-white active:bg-green-400 hover:mb-[2%] hover:translate-x-[8px] duration-200 shadow-md mt-[30px]'>
-                        <Text className='text-[12pt] font-bold'>Cadastrar</Text>
-                        <Ionicons name='person-add' size={20} color='blue' />
-                    </Pressable>
+                    <ButtonEnv textButton='Cadastrar' action={redirect} />
                 </View>
             </View>
         );

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'expo-router';
 import { styled } from '../style/style';
 import { TechCar } from '../components/atoms/logoTechCar';
+import { ButtonEnv } from '../components/atoms/buttonEnv';
 
 export default function Index() {
     let cadasterButtom
@@ -41,7 +42,7 @@ export default function Index() {
                 <View >
                     <Pressable className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%] hover:translate-x-[15px] shadow-md'
                         onPress={handleSubmit}>
-                        <Text selectable={false}>Cadastrar</Text>
+                        <Text selectable={false}>Entrar</Text>
 
                     </Pressable>
 
@@ -56,7 +57,7 @@ export default function Index() {
                         backgroundColor: width <= 800 ? '#006dff' : 'white',
                     }}
                 >
-                    <Text selectable={false}>Cadastrar</Text>
+                    <Text selectable={false}>Entrar</Text>
                 </Pressable>
             )
         }
@@ -93,7 +94,7 @@ export default function Index() {
 
             {/* formulário de login */}
 
-            <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[100%]' style={{
+            <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[80%]' style={{
                 width: width <= 1000 ? '100%' : '40%',
                 backgroundColor: width <= 800 ? 'white' : '',
             }}>
