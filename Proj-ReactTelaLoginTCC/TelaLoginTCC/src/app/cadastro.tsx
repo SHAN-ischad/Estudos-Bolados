@@ -1,7 +1,6 @@
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { View, Text, Pressable, Image, Alert } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { TextInput, View, Text, Pressable, Image, Alert } from 'react-native';
 import { ButtonEnv } from '../components/atoms/buttonEnv';
 import { styled } from '../style/style';
 import { Dimensions } from 'react-native';
