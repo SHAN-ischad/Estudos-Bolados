@@ -1,0 +1,9 @@
+.box {
+    background: linear-gradient(135deg, blue, rgb(61, 211, 238));
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
