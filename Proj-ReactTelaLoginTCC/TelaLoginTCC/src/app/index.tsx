@@ -40,9 +40,9 @@ export default function Index() {
             return (
                 cadasterButtom =
                 <View >
-                    <Pressable className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%] hover:translate-x-[15px] shadow-md'
+                    <Pressable className='items-center w-fit p-[10px] px-[50px]  bg-blue-600  duration-[0.5s] rounded-[10px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%] hover:translate-x-[15px] shadow-md'
                         onPress={handleSubmit}>
-                        <Text selectable={false}>Entrar</Text>
+                        <Text className='text-white' selectable={false}>Entrar</Text>
 
                     </Pressable>
 
@@ -82,13 +82,13 @@ export default function Index() {
                 <View className='h-fit pb-[20%] ' style={{ marginTop: width <= 730 ? 10 : 0 }}>
                     <Text className='font-bold' style={{
                         fontFamily: styled.fonts.fontFamily,
-                        fontSize: width <= 1000 ? 17 : 28,
+                        fontSize: width <= 1000 ? 17 : 40,
                         marginTop: width <= 1000 ? '6%' : 0
                     }} >Bem vindo ao nosso site. Faça seu Login</Text>
                 </View>
                 <Image style={{
-                    height: height <= 800 ? 250 : 390,
-                    width: width <= 800 ? 250 : 390,
+                    height: height <= 800 ? 250 : 500,
+                    width: width <= 800 ? 250 : 500,
                 }} source={require('../../assets/images/Securelogin.gif')} />
             </View>
 
@@ -109,7 +109,9 @@ export default function Index() {
                     className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
                     style={{
                         backgroundColor: width <= 800 ? 'whitesmoke' : 'white',
-                        width: width <= 800 ? '45%' : '100%'
+                        width: width <= 800 ? '45%' : '60%',
+                        padding: width <= 800 ? 12 : 10,
+                        borderRadius: width <= 800 ? 10 : 5,
                     }}
                     placeholder='escreva aqui'
                     value={email}
@@ -124,7 +126,9 @@ export default function Index() {
                     className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
                     style={{
                         backgroundColor: width <= 800 ? 'whitesmoke' : 'white',
-                        width: width <= 800 ? '45%' : '100%',
+                        width: width <= 800 ? '45%' : '60%',
+                        padding: width <= 800 ? 12 : 10,
+                        borderRadius: width <= 800 ? 10 : 5,
                     }}
                     placeholder='escreva aqui'
                     value={password}
