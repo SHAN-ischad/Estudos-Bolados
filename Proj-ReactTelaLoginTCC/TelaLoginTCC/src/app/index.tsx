@@ -45,7 +45,6 @@ export default function Index() {
                         <Text className='text-white' selectable={false}>Entrar</Text>
 
                     </Pressable>
-
                 </View>)
 
         } else {
