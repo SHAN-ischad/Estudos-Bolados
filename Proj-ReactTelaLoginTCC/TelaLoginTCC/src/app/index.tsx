@@ -62,6 +62,47 @@ export default function Index() {
         }
     }
 
+    // função para adaptar os inputs para cada tipo de tela
+
+    const formInputs = () => {
+
+        if (width <= 800) {
+            return (
+                // Para Mobile
+                <>
+                    <TextInput
+                        value={email}
+                        onChangeText={setEmail}
+                        placeholder='Email' className='mt-[20px] mb-[20px] w-[70%] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+
+                    <TextInput
+                        value={password}
+                        onChangeText={setPassword}
+                        placeholder='Senha' className='w-[70%] mb-[20px] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+                </>
+            )
+
+        } else {
+            // para Pc ou acima
+            return (
+                <>
+
+                    <TextInput
+                        value={email}
+                        onChangeText={setEmail}
+                        placeholder='Email' className='bg-white mt-[20px] mb-[20px] w-[70%] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+
+                    <TextInput
+                        value={password}
+                        onChangeText={setPassword}
+                        placeholder='Senha' className='bg-white w-[70%] mb-[20px] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+                </>
+            )
+
+        }
+
+    }
+
 
     const casdasterPage = () => {
         router.replace('./cadastro');
@@ -101,38 +142,8 @@ export default function Index() {
 
                 <Text className='text-[22pt] text-center font-bold ' style={{ color: 'blue' }}>TechCar</Text>
 
-                <Text className='font-bold text-[16pt] mb-[10px] mt-[20px]' style={{
-                    fontFamily: styled.fonts.fontFamily,
-                }}>Escreva seu email</Text>
-                <TextInput
-                    className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
-                    style={{
-                        backgroundColor: width <= 800 ? 'whitesmoke' : 'white',
-                        width: width <= 800 ? '45%' : '60%',
-                        padding: width <= 800 ? 12 : 10,
-                        borderRadius: width <= 800 ? 10 : 5,
-                    }}
-                    placeholder='escreva aqui'
-                    value={email}
-                    onChangeText={setEmail}
-                />
+                {formInputs()}
 
-                <Text className='font-bold text-[15pt] mb-[10px]' style={{
-                    fontFamily: styled.fonts.fontFamily,
-
-                }}>Escreva sua senha</Text>
-                <TextInput
-                    className='w-[60%] py-[10px] bg-white rounded-[5px] mb-[20px]'
-                    style={{
-                        backgroundColor: width <= 800 ? 'whitesmoke' : 'white',
-                        width: width <= 800 ? '45%' : '60%',
-                        padding: width <= 800 ? 12 : 10,
-                        borderRadius: width <= 800 ? 10 : 5,
-                    }}
-                    placeholder='escreva aqui'
-                    value={password}
-                    onChangeText={setPassword}
-                />
 
                 {ButtonCadaster()}
 
