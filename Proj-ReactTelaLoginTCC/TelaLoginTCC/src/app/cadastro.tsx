@@ -19,7 +19,7 @@ export default function Cadastro() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 1000)
+        }, 2500)
         return () => clearTimeout(timer)
     }, [])
 
@@ -38,8 +38,53 @@ export default function Cadastro() {
 
     }
 
+    const formInputs = () => {
+        if (width <= 800) {
+            return (
+                <>
+                    <TextInput
+                        value={userName}
+                        onChangeText={setUserName}
+                        placeholder='Nome' className='mt-[20px] mb-[20px] w-[70%] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt] placeholder:text-black' />
+
+                    <TextInput
+                        value={userEmail}
+                        onChangeText={setUserEmail}
+                        placeholder='Email' className='mt-[20px] mb-[20px] w-[70%] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt] placeholder:text-black' />
+
+                    <TextInput
+                        value={userPassword}
+                        onChangeText={setUserPassword}
+                        placeholder='Senha' className='mt-[20px] mb-[20px] w-[70%] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt] placeholder:text-black' />
+                </>
+            )
+        } else {
+            return (
+                <View className='my-[20px] w-full items-center gap-[15px]'>
+                    <TextInput
+                        value={userName}
+                        onChangeText={setUserName}
+                        placeholder='Nome' className='bg-white   w-[70%] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt] ' />
+
+                    <TextInput
+                        value={userEmail}
+                        onChangeText={setUserEmail}
+                        placeholder='Email' className='bg-white  w-[70%] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+
+                    <TextInput
+                        value={userPassword}
+                        onChangeText={setUserPassword}
+                        placeholder='Senha' className='bg-white w-[70%]  p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+                </View>
+            )
+        }
+    }
+
     if (isLoading) {
-        return <View className='h-full w-full bg-white justify-center items-center'><Text>Carregando...</Text></View>
+        return <View className='h-full w-full bg-white justify-center items-center'><Image style={{
+            height: 200,
+            width: 200,
+        }} source={require('../../assets/images/Techcar.png')} /></View>
     } else {
         return (
             <View className='h-full  justify-center flex-row-reverse gap-[10%]  items-center' style={{
@@ -68,34 +113,15 @@ export default function Cadastro() {
                     }} source={require('../../assets/images/Computer.gif')} />
 
                 </View>
-                <View className=' h-fit pb-[2%] w-[35%] rounded-[8px] text-white shadow-md items-center  justify-center  ' style={{
+                <View className=' h-fit pb-[2%] w-[35%] rounded-[8px]   items-center  justify-center  ' style={{
                     width: width <= 800 ? '90%' : '35%',
                 }}>
                     <TechCar
                         height={170}
                         widht={170} />
                     <Text className='text-[15pt] mb-[12px] font-bold '>Cadastro</Text>
-                    {/* nome */}
-                    <Text className='text-[15pt] font-bold mb-[10px]'>Digite seu nome</Text>
-                    <TextInput
-                        value={userName}
-                        onChangeText={setUserName}
-                        className='p-[12px] rounded-[5px] shadow-md w-[50%] mb-[15px] text-black bg-white' placeholder='Digite aqui' />
 
-                    {/* email */}
-                    <Text className='text-[15pt] font-bold mb-[10px]'>Digite seu email</Text>
-                    <TextInput
-                        value={userEmail}
-                        onChangeText={setUserEmail}
-                        className='p-[12px] rounded-[5px] shadow-md w-[50%] mb-[15px] text-black bg-white' placeholder='Digite aqui' />
-
-                    {/* senha */}
-                    <Text className='text-[15pt] font-bold mb-[10px]'>Digite sua senha</Text>
-                    <TextInput
-                        value={userPassword}
-                        onChangeText={setUserPassword}
-                        className='p-[12px] rounded-[5px] shadow-md w-[50%] bg-white text-black' placeholder='Digite aqui' />
-
+                    {formInputs()}
                     <ButtonEnv textButton='Cadastrar' action={redirect} />
                 </View>
             </View>

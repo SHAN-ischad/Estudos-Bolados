@@ -9,8 +9,8 @@ interface ButtonEnvProps {
 export function ButtonEnv({ action, textButton }: ButtonEnvProps) {
     return (
         <View>
-            <Pressable onPress={action} className='w-[100%] gap-[5px] p-[15px] px-[25px] flex-row justify-center rounded-[5px] bg-white active:bg-green-400 hover:mb-[2%] hover:translate-x-[8px] duration-200 shadow-md mt-[30px]'>
-                <Text className='text-[12pt] font-bold'>{textButton}</Text>
+            <Pressable onPress={action} className='items-center  w-fit p-[10px] px-[50px]  bg-blue-600  duration-[0.5s] rounded-[10px]   active:scale-[1.0]  hover:translate-x-[-9px] shadow-md'>
+                <Text className='text-[12pt] font-bold text-white'>{textButton}</Text>
             </Pressable>
         </View>
     );

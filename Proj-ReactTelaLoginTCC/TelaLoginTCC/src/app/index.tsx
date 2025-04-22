@@ -50,7 +50,7 @@ export default function Index() {
         } else {
             return (
                 <Pressable
-                    className='bg-white items-center w-fit p-[10px] px-[30px]  duration-[0.5s] rounded-[5px]  hover:scale-[1.1] active:scale-[1.0] hover:my-[2%] hover:translate-x-[15px]'
+                    className='bg-white items-center w-fit p-[10px] px-[60px]  duration-[0.2s] rounded-[10px]   active:scale-[1.0] hover:translate-x-[10px] hover:border-solid hover:border-[0.5px] hover:duration-[800ms] hover:shadow-2xl hover:shadow-green-100 '
                     onPress={handleSubmit}
                     style={{
                         backgroundColor: width <= 800 ? '#006dff' : 'white',
@@ -70,15 +70,30 @@ export default function Index() {
             return (
                 // Para Mobile
                 <>
-                    <TextInput
-                        value={email}
-                        onChangeText={setEmail}
-                        placeholder='Email' className='mt-[20px] mb-[20px] w-[70%] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
-
-                    <TextInput
-                        value={password}
-                        onChangeText={setPassword}
-                        placeholder='Senha' className='w-[70%] mb-[20px] p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+                    <View className='ml-[15%] w-full'>
+                        <View className='flex-row w-full justify-around items-center'>
+                            <TextInput
+                                value={email}
+                                onChangeText={setEmail}
+                                placeholder='Email' className='mt-[20px] mb-[20px] w-[70%]  p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+                            <Image style={{
+                                height: 20,
+                                width: 20,
+                                left: "-20%"
+                            }} source={require('../../assets/images/email.png')} />
+                        </View>
+                        <View className='flex-row w-full justify-around items-center'>
+                            <TextInput
+                                value={password}
+                                onChangeText={setPassword}
+                                placeholder='Senha' className='mt-[20px] mb-[20px] w-[70%]  p-[10px] border-solid border-[1px] rounded-[10px] focus:rounded-[5px] duration-[600ms] placeholder:text-[12pt]' />
+                            <Image style={{
+                                height: 20,
+                                width: 20,
+                                left: "-20%"
+                            }} source={require('../../assets/images/Senha.png')} />
+                        </View>
+                    </View>
                 </>
             )
 
@@ -115,11 +130,11 @@ export default function Index() {
 
         }} >
 
-            <View className='h-full w-fit items-center justify-center mr-[10%] flex-[100%] ' style={{
+            <View className='h-full items-center justify-center mr-[10%] flex-[100%] ' style={{
                 marginBottom: width <= 1000 ? 20 : 0,
                 display: width <= 800 ? 'none' : 'flex'
             }}>
-                <View className='h-fit pb-[20%] ' style={{ marginTop: width <= 730 ? 10 : 0 }}>
+                <View className='h-fit pb-[5%] ' style={{ marginTop: width <= 730 ? 10 : 0 }}>
                     <Text className='font-bold' style={{
                         fontFamily: styled.fonts.fontFamily,
                         fontSize: width <= 1000 ? 17 : 40,
@@ -127,14 +142,14 @@ export default function Index() {
                     }} >Bem vindo ao nosso site. Faça seu Login</Text>
                 </View>
                 <Image style={{
-                    height: height <= 800 ? 250 : 500,
-                    width: width <= 800 ? 250 : 500,
-                }} source={require('../../assets/images/Securelogin.gif')} />
+                    height: 500,
+                    width: 500,
+                }} source={require('../../assets/images/car.gif')} />
             </View>
 
             {/* formulário de login */}
 
-            <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[80%]' style={{
+            <View className='h-[100%]  w-fit p-[5%] bg-blue-300 rounded-[5px] items-center justify-center flex-[60%]' style={{
                 width: width <= 1000 ? '100%' : '40%',
                 backgroundColor: width <= 800 ? 'white' : '',
             }}>
