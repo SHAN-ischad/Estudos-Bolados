@@ -38,6 +38,12 @@ export default function Cadastro() {
 
     }
 
+    const goToLogin = () => {
+        router.push('/')
+    }
+
+
+
     const formInputs = () => {
         if (width <= 800) {
             return (
@@ -123,6 +129,11 @@ export default function Cadastro() {
 
                     {formInputs()}
                     <ButtonEnv textButton='Cadastrar' action={redirect} />
+
+                    <View className='mt-[10px] flex-row gap-2' >
+                        <Text className='font-bold text-[11pt]' selectable={false}>Já tem conta?</Text>
+                        <Pressable><Text className='text-[11pt] font-bold text-blue-600 hover:text-red-500 duration-[0.4s]' onPress={goToLogin}>Faça Seu Login</Text></Pressable>
+                    </View>
                 </View>
             </View>
         );

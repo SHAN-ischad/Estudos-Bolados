@@ -24,7 +24,7 @@ export default function Service() {
 
                 <View className='w-full items-center mt-[5%]'>
                     {/* Top Text */}
-                    <Text className='font-bold text-[20pt]'>Bem vindo a área de serviços</Text>
+                    <Text className='font-bold text-[20pt]'>Bem vindo a área de serviços.</Text>
                     <Text className='font-bold text-[20pt]'>Crie seus serviços e configure-os</Text>
                 </View>
 
