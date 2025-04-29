@@ -11,6 +11,13 @@ export default function Layout() {
                     options={{
                         headerShown: false,
                         drawerIcon: () => <Ionicons name='home' size={22} color={'black'} />,
+
+                    }} />
+                <Drawer.Screen
+                    name='tabs'
+                    options={{
+                        headerShown: true,
+                        drawerIcon: () => <Ionicons name='add' size={22} color={'black'} />,
                     }} />
             </Drawer>
         </GestureHandlerRootView>
