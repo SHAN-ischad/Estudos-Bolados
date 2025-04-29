@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable } from 'react-native';
+import { View, Text, TextInput, Pressable, Image } from 'react-native';
 import { HeaderService } from '../../components/screens/servicePage/header';
 import { ContentPage } from '../../components/screens/servicePage/content';
 import { useEffect, useState } from 'react';
@@ -8,13 +8,21 @@ export default function Service() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 1000)
+        }, 2000)
         return () => clearTimeout(timer)
     }, [])
 
     if (isLoading) {
-        return <View className='h-full w-full bg-white justify-center 
-        items-center'><Text>Carregando...</Text></View>
+
+        return (
+            <View className='h-full w-full bg-white justify-center items-center'>
+                <Image style={{
+                    height: 200,
+                    width: 200,
+                }} source={require('../../../assets/images/Techcar.png')} /></View>)
+
+
+
     } else {
         return (
             <View className='h-full w-full bg-white overflow-auto overflow-x-hidden ' >
