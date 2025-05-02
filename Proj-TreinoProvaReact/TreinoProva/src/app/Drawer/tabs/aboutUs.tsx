@@ -5,6 +5,7 @@ import { useRouter } from 'expo-router';
 import { useState, useEffect } from 'react';
 
 export default function Services() {
+
     const router = useRouter()
     const [loading, setLoading] = useState(true);
 
@@ -29,6 +30,7 @@ export default function Services() {
             </View>
         )
     }
+
     return (
         <View className='flex-1 '>
             {/* header */}
@@ -40,9 +42,8 @@ export default function Services() {
                 </View>
                 {/* body */}
                 <View className='w-full gap-[50px] mt-[5%] items-center'>
-                    <Text className='text-[20pt] font-mono font-semibold'>Area de Serviços</Text>
-                    <Ionicons name='reader-outline' size={100} color={'blue'} />
-
+                    <Text className='text-[20pt] font-mono font-semibold'>Sobre nós</Text>
+                    <Ionicons name='happy' size={100} color={'blue'} />
                     <Pressable
                         onPress={() => router.replace('/')}
                         className='shadow-md bg-blue-500 rounded-md  gap-[126px] w-[200px] h-fit p-[5px] group flex-row-reverse '>

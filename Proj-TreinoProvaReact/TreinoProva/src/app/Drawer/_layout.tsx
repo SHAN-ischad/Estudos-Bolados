@@ -16,7 +16,7 @@ export default function Layout() {
                 <Drawer.Screen
                     name='tabs'
                     options={{
-                        headerShown: true,
+                        headerShown: false,
                         drawerIcon: () => <Ionicons name='add' size={22} color={'black'} />,
                     }} />
             </Drawer>
