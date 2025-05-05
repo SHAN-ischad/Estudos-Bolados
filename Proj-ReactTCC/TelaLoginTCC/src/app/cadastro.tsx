@@ -33,7 +33,7 @@ export default function Cadastro() {
         } else {
             Alert.alert('Sucesso. Cadastro realizado com sucesso!')
             alert('Sucesso. Cadastro realizado com sucesso!')
-            router.replace('/Drawer/service');
+            router.replace('/Drawer/home');
         }
 
     }

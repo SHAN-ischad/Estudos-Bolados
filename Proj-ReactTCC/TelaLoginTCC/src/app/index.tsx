@@ -28,7 +28,7 @@ export default function Index() {
             return;
         }
         Alert.alert('Sucesso', 'Todos os campos estão preenchidos!');
-        router.replace('/Drawer/service');
+        router.replace('/Drawer/home');
     };
     // Criação de variáveis para armazenar a largura e altura da tela para 
     // um design responsivo

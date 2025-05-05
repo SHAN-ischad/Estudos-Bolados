@@ -13,12 +13,12 @@ export default function Layout() {
                         title: "Services",
                     }}
                 />
-                {/* <Drawer.Screen
-                    name="about"
+                <Drawer.Screen
+                    name="home"
                     options={{
-                        title: "Sobre Nós",
+                        title: "Inicio",
                     }}
-                /> */}
+                />
             </Drawer>
         </GestureHandlerRootView>
     );
