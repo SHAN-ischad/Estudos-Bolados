@@ -20,7 +20,7 @@ export function GlobalInputs({ placeholder, value, backgroundColor, padding, bor
     return (
         <>
             <TextInput placeholder={placeholder} value={value}
-                className={`w-full p-[${padding}] rounded-[${borderRadius}] max-sm:w-[300px] border-[1px] duration-[300ms] focus:rounded-[5px] bg-[${backgroundColor}] mt-[${marginTop}] ml-[${marginLeft}] mr-[${marginRight}] mb-[${marginBottom}]`} />
+                className={`w-full p-[${padding}] max-sm:w-full rounded-[${borderRadius}] max-sm:w-[300px] border-[1px] duration-[300ms] focus:rounded-[5px] bg-[${backgroundColor}] mt-[${marginTop}] ml-[${marginLeft}] mr-[${marginRight}] mb-[${marginBottom}]`} />
 
         </>
     );

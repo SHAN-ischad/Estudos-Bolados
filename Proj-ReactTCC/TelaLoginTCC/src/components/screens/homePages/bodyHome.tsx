@@ -11,7 +11,7 @@ export function BodyHome() {
             <View className='w-full max-sm:items-center gap-[20px]  '>
                 {/* tag User */}
                 <View
-                    className='h-fit ml-[5%] max-sm:right-[100px] items-center flex-row gap-[12px] w-fit pr-[20px] pb-[1.1px] '>
+                    className='h-fit ml-[5%] max-sm:mr-[10%] max-sm:right-[100px] items-center flex-row gap-[12px] w-fit pr-[20px] pb-[1.1px] '>
                     <Image source={{ uri: 'https://github.com/SHAN-ischad.png' }} className='h-[70px] w-[70px] rounded-3xl max-sm:h-[60px] max-sm:w-[60px]' />
                     {/* Text User */}
                     <View className='h-full flex-col justify-center'>
@@ -21,9 +21,9 @@ export function BodyHome() {
                 </View>
 
                 {/* Actions */}
-                <View className='w-full ml-[5%]  h-[500px] '>
+                <View className='w-full h-[500px] '>
                     {/* Input */}
-                    <View className='w-[700px] max-sm:w-[500px] flex-row  items-center justify-center max-md:w-[500px] '>
+                    <View className='w-[700px] max-sm:w-[400px] max-sm:left-[10%]  flex-row  items-center justify-center max-md:w-[500px] '>
 
                         <GlobalInputs backgroundColor='bg-slate-200' borderRadius='10px' padding='10px' placeholder='Pesquisar' value='' marginBottom='0px' marginLeft='0' marginRight='0' marginTop='0px' />
                         <Ionicons name='search' size={25} color={"black"} className='right-[40px] ' />
@@ -41,7 +41,7 @@ export function BodyHome() {
                         <GlobalButton
                             action={() => console.log("Pressionou")}
                             fontBold='semibold' backgroundColor='bg-gray-300' fontSize='11pt' marginBottom='0'
-                            marginTop='20px' paddindg='10' height='0' text='Receitas'
+                            marginTop='20px' paddindg='10' height='0' text='Financeiro'
                             width='300px' />
 
                         <GlobalButton

@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { HomeHeader } from '../../components/screens/homePages/header';
 import { BodyHome } from '../../components/screens/homePages/bodyHome';
-
+import { BottomHome } from '../../components/screens/homePages/bottomHome';
 
 export default function Home() {
     return (
@@ -12,6 +12,8 @@ export default function Home() {
             </View>
 
             <BodyHome />
+
+            <BottomHome />
         </View>
     );
 }
