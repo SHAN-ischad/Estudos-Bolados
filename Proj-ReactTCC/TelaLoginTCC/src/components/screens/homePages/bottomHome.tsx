@@ -1,10 +1,13 @@
-import { Text } from 'react-native';
-import { View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 
 export function BottomHome() {
     return (
-        <View className='h-[500px] bg-black w-full' >
+        <View className='h-[400px] bottom-[10%]  w-full' >
+            <View className='w-full h-fit flex-col'>
+                <Pressable>
 
+                </Pressable>
+            </View>
         </View>
     );
 }
