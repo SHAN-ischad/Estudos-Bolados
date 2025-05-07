@@ -1,5 +1,4 @@
-import { ScrollView, Text } from 'react-native';
-import { View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { GlobalAreaPressable } from '../../organisms/globalAreaPressable';
 export function BottomHome() {
     return (
