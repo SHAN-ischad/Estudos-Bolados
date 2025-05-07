@@ -6,12 +6,12 @@ import { ButtonEnv } from '../../atoms/buttonEnv';
 import { GlobalButton } from '../../atoms/globalButton';
 export function BodyHome() {
     return (
-        <View className='w-full mt-[2.5%] h-[500px] min-h-[80%]:overflow-auto  ' >
+        <View className='w-full max-sm:items-center mt-[2.5%] h-[500px]   ' >
             {/* User */}
-            <View className='w-full max-sm:items-center gap-[20px]  '>
+            <View className='w-full max-sm:justify-center gap-[20px]  '>
                 {/* tag User */}
                 <View
-                    className='h-fit ml-[5%] max-sm:mr-[10%] max-sm:right-[100px] items-center flex-row gap-[12px] w-fit pr-[20px] pb-[1.1px] '>
+                    className='h-fit  items-center flex-row gap-[12px] w-fit pr-[20px] pb-[1.1px] '>
                     <Image source={{ uri: 'https://github.com/SHAN-ischad.png' }} className='h-[70px] w-[70px] rounded-3xl max-sm:h-[60px] max-sm:w-[60px]' />
                     {/* Text User */}
                     <View className='h-full flex-col justify-center'>
@@ -23,14 +23,14 @@ export function BodyHome() {
                 {/* Actions */}
                 <View className='w-full h-[500px] '>
                     {/* Input */}
-                    <View className='w-[700px] max-sm:w-[400px] max-sm:left-[10%]  flex-row  items-center justify-center max-md:w-[500px] '>
+                    <View className='w-[700px] flex-row  items-center justify-center max-md:w-[500px] max-sm:w-full  '>
 
                         <GlobalInputs backgroundColor='bg-slate-200' borderRadius='10px' padding='10px' placeholder='Pesquisar' value='' marginBottom='0px' marginLeft='0' marginRight='0' marginTop='0px' />
                         <Ionicons name='search' size={25} color={"black"} className='right-[40px] ' />
                     </View>
 
                     {/* Buttons */}
-                    <View className='w-full max-sm:flex-wrap max-sm:justify-center flex-row  justify-start  gap-[20px]'>
+                    <View className='w-full max-sm:flex-wrap max-sm:justify-start flex-row  justify-start  gap-[20px]'>
 
                         <GlobalButton
                             action={() => console.log("Pressionou")}

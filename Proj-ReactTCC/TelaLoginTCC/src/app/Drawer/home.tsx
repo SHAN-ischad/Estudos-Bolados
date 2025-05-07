@@ -5,7 +5,7 @@ import { BottomHome } from '../../components/screens/homePages/bottomHome';
 
 export default function Home() {
     return (
-        <View className='flex-1' >
+        <View className='flex-1 max-2xl:overflow-x-auto' >
             {/* Header */}
             <View>
                 <HomeHeader />
