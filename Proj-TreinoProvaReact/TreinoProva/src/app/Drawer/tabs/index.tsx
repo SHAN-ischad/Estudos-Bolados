@@ -3,8 +3,13 @@ import { DrawerToggleButton } from '@react-navigation/drawer';
 import { View, Text, ActivityIndicator, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useState, useEffect } from 'react';
+import { ProductBox } from '@/src/components/organisms/ProductBox';
+import { newUser } from '@/src/hooks/newUsers';
+
+
 
 export default function Services() {
+    const { usuario } = newUser()
     const router = useRouter()
     const [loading, setLoading] = useState(true);
 
@@ -38,13 +43,42 @@ export default function Services() {
                     <DrawerToggleButton />
 
                 </View>
+
+                {/* userName */}
+                <View className='w-fit'>
+                    {usuario.name || 'Usuário não encontrado'}
+                </View>
                 {/* body */}
                 <View className='w-full gap-[50px] mt-[5%] items-center'>
-                    <Text className='text-[20pt] font-mono font-semibold'>Area de Serviços</Text>
+                    <Text className='text-[20pt] font-mono font-semibold'>Area de Compras</Text>
                     <Ionicons name='reader-outline' size={100} color={'blue'} />
 
+                    <View className='w-full flex-row gap-[20px]'>
+
+                        <ProductBox
+                            productImage='a'
+                            productName='Carrinho hotWheels'
+                            productPrice={'R$ 100,00'}
+                            productDescription='carrinho bolado do hotWheels' />
+
+                        <ProductBox
+                            productImage='a'
+                            productName='Carrinho hotWheels'
+                            productPrice={'R$ 100,00'}
+                            productDescription='carrinho bolado do hotWheels' />
+
+                        <ProductBox
+                            productImage='a'
+                            productName='Carrinho hotWheels'
+                            productPrice={'R$ 100,00'}
+                            productDescription='carrinho bolado do hotWheels' />
+
+                    </View>
+
+
+
                     <Pressable
-                        onPress={() => router.replace('/')}
+                        onPress={() => router.push('/Drawer')}
                         className='shadow-md bg-blue-500 rounded-md  gap-[126px] w-[200px] h-fit p-[5px] group flex-row-reverse '>
                         <Text className='font-sans text-[13pt] text-white font-medium'>Voltar</Text>
                         <Ionicons className='top-[5px] group-hover:animate-custom-bounce' name='arrow-back' size={15} color={"white"} />
