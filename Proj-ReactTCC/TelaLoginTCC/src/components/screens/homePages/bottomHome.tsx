@@ -6,11 +6,11 @@ export function BottomHome() {
             <Text className='text-[30px] text-center'>Ultimos Serviços</Text>
 
             {/*Latest Services  */}
-            <ScrollView className='mt-[15px] w-[90%]   '
+            <ScrollView className='mt-[15px] w-[50%]   '
                 contentContainerStyle={{ flexGrow: 1 }}
                 keyboardShouldPersistTaps='handled'>
 
-                <View className=' flex-col scale-[0.91] gap-[20px]  max-sm:w-[100%] max-sm:scale-[1]  '>
+                <View className=' flex-col  scale-[0.91] gap-[20px]  max-sm:w-[100%] max-sm:scale-[1]  '>
                     <GlobalAreaPressable nameCar='Lanborguini' openingDate='29/10/25' nameClient='Victor Fritz' serviceStage='limpeza' image='aaa' />
 
                     <GlobalAreaPressable nameCar='Lanborguini' openingDate='29/10/25' nameClient='Victor Fritz' serviceStage='limpeza' image='aaa' />

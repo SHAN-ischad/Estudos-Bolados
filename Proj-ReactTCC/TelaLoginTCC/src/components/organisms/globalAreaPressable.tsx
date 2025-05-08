@@ -29,14 +29,14 @@ export function GlobalAreaPressable({ nameClient, nameCar, openingDate, serviceS
                     {/* Bottom (opening date) */}
                     <View className='w-full'>
                         <Text className='text-[10pt] font-semibold text-slate-300'>
-                            {openingDate}
+                            Data de Abertura: {openingDate}
                         </Text>
                     </View>
                 </View>
                 {/* Right Content (service stage) */}
                 <View className='flex-[40%] h-full flex-col gap-[10px] ' >
-                    <Text className='text-[12.7pt]'>Estágio do Serviço</Text>
-                    <Text className='text-[11pt] text-slate-200'>{serviceStage}{'\n'}(7/8)</Text>
+                    <Text className='text-[15pt] font-extrabold'>Estágio do Serviço</Text>
+                    <Text className='text-[14pt] text-slate-200'>{serviceStage} (7/8)</Text>
                 </View>
             </Pressable>
         </>
