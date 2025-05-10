@@ -15,7 +15,7 @@ export default function Home() {
                     onPress={() => router.push('./Drawer')}
                     className=' group flex-row w-[140px] rounded-[25px] justify-center 
                     py-[5px] gap-[20px] hover:rounded-[5px] border-solid bg-red-500 shadow-md duration-[200ms]'>
-                    <Text className='text-[15pt] text-white font-bold font-mono'>Home</Text>
+                    <Text className='text-[15pt] text-white font-bold font-mono'>Cadastrar</Text>
                     <Ionicons className='group-hover:animate-custom-bounce top-[1px]' name='arrow-forward' size={22} color={'white'} />
                 </Pressable>
 

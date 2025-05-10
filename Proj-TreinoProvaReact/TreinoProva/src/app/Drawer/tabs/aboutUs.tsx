@@ -43,6 +43,8 @@ export default function Services() {
                 {/* body */}
                 <View className='w-full gap-[50px] mt-[5%] items-center'>
                     <Text className='text-[20pt] font-mono font-semibold'>Sobre nós</Text>
+                    <Text className='text-[20pt] font-mono font-semibold'>Somos uma empresa de vendas
+                        {'\n'}Focadas em um ótimo atendimento e uma ótima venda</Text>
                     <Ionicons name='happy' size={100} color={'blue'} />
                     <Pressable
                         onPress={() => router.replace('/')}
