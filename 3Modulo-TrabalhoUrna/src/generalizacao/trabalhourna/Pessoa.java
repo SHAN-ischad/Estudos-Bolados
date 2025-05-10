@@ -37,16 +37,16 @@ public class Pessoa {
         return this.idade;
     }
     
-    public int setIdade( int idade){
-        return idade = this.idade;
+    public void setIdade( int idade){
+         idade = this.idade;
     }
     
     public String getEstadoCivil(){
         return this.estadoCivil;
     }
     
-    public String setEstadoCivil(String estadoCivil ){
-        return estadoCivil = this.estadoCivil;
+    public void setEstadoCivil(String estadoCivil ){
+        estadoCivil = this.estadoCivil;
     }
     
     public String Saudacao(){
