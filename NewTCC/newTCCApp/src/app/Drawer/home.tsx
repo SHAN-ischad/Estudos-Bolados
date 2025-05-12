@@ -1,0 +1,19 @@
+import { View } from 'react-native';
+import { GlobalHeader } from '@/src/components/organisms/header';
+import { BodyHome } from '../../components/screens/homePages/bodyHome';
+import { BottomHome } from '../../components/screens/homePages/bottomHome';
+
+export default function Home() {
+    return (
+        <View className='flex-1 bg-white overflow-x-hidden' >
+            {/* Header */}
+            <View>
+                <GlobalHeader />
+            </View>
+
+            <BodyHome />
+
+            <BottomHome />
+        </View>
+    );
+}
