@@ -1,8 +1,9 @@
 import { ScrollView, Text, View } from 'react-native';
 import { GlobalAreaPressable } from '../../organisms/globalAreaPressable';
+import GlobalBottom from '../../organisms/globalBottom';
 export function BottomHome() {
     return (
-        <View className='h-fit bottom-[280px] mt-[5%] max-[400px]:mt-[8%] w-full items-center' >
+        <View className='h-fit  mt-[5%] max-[400px]:mt-[8%] w-full items-center' >
             <Text className='text-[30px] text-center'>Ultimos Serviços</Text>
 
             {/*Latest Services  */}
@@ -30,6 +31,9 @@ export function BottomHome() {
                 </View>
             </ScrollView>
 
+            <View className='mt-[20px]'>
+                <GlobalBottom />
+            </View>
         </View>
     );
 }

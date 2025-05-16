@@ -1,7 +1,7 @@
-import { View } from 'react-native';
 import { GlobalHeader } from '@/src/components/organisms/header';
 import { BodyHomeClient } from '@/src/components/screens/homeClientPages/bodyHomeClient';
 import { BottomHomeClient } from '@/src/components/screens/homeClientPages/bottomHomeClient';
+import { View } from 'react-native';
 
 
 export default function HomeClient() {

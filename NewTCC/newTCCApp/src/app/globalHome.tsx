@@ -1,4 +1,5 @@
 import { View } from 'react-native';
+import GlobalBottom from '../components/organisms/globalBottom';
 import BodyGlobalHome from '../components/screens/globalHomePages/body';
 import { HeaderGlobalHome } from '../components/screens/globalHomePages/header';
 
@@ -9,9 +10,11 @@ export default function GlobalHome() {
             {/* Header */}
             <HeaderGlobalHome />
 
+            {/* body */}
             <BodyGlobalHome />
 
-
+            {/* Bottom */}
+            <GlobalBottom />
         </View>
     );
 }

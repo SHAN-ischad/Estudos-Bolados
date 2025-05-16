@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Image, Pressable, Text, View } from 'react-native';
+import { router } from 'expo-router';
+import { Image, NativeSyntheticEvent, Pressable, Text, TextInputChangeEventData, View } from 'react-native';
 import { GlobalInputs } from '../../atoms/globalInputs';
 import { TechCar } from '../../atoms/logoTechCar';
 
@@ -8,7 +9,7 @@ export function HeaderGlobalHome() {
         <View className=" border-b-[0.1px] max-[400px]:justify-center max-[400px]:gap-[50%]  border-gray-300 pb-[20px] w-full ml-[10%] mr-[10%] justify-around items-center flex-row">
             {/* Logo */}
             <View >
-                <TechCar height={79} widht={79} />
+                <TechCar height={79} width={79} />
             </View>
             {/* Inputs for Search */}
             <View className="h-fit max-[400px]:hidden flex-row items-center  max-[900px]:w-[300px] w-[500px]">
@@ -21,8 +22,9 @@ export function HeaderGlobalHome() {
                     marginTop=""
                     padding="10px"
                     placeholder="Pesquise"
-                    value=""
-                />
+                    value="" setAtribute={function (e: NativeSyntheticEvent<TextInputChangeEventData>): void {
+                        throw new Error('Function not implemented.');
+                    }} />
                 <Ionicons className='right-[30px]' name='search' size={20} />
             </View>
             {/* User Area */}
@@ -54,7 +56,8 @@ export function HeaderGlobalHome() {
                                     </Pressable>
 
                                     {/* Home */}
-                                    <Pressable className="w-full gap-[5px] flex-row group/pressables2">
+                                    <Pressable className="w-full gap-[5px] flex-row group/pressables2"
+                                        onPress={() => router.push('/Drawer/home')}>
                                         <Ionicons name="home-outline" size={22} color={'orange'} />
                                         <Text className="text-[12pt] font-medium ml-0 group-hover/pressables2:ml-[20px] duration-300">
                                             Tela Principal

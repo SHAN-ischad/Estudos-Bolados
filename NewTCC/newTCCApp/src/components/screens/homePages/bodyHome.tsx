@@ -1,7 +1,7 @@
-import { View, Image, Text } from 'react-native';
-import { GlobalInputs } from '../../atoms/globalInputs';
 import { Ionicons } from '@expo/vector-icons';
+import { Image, Text, View } from 'react-native';
 import { GlobalButton } from '../../atoms/globalButton';
+import { GlobalInputs } from '../../atoms/globalInputs';
 
 
 export function BodyHome() {
@@ -25,7 +25,7 @@ export function BodyHome() {
                     {/* Input */}
                     <View className='w-[700px] flex-row items-center justify-center  max-sm:w-full  '>
 
-                        <GlobalInputs backgroundColor='bg-slate-200' borderRadius='10px' padding='10px' placeholder='Pesquisar' value='' marginBottom='0px' marginLeft='0' marginRight='0' marginTop='0px' />
+                        <GlobalInputs setAtribute={() => { }} backgroundColor='bg-slate-200' borderRadius='10px' padding='10px' placeholder='Pesquisar' value='' marginBottom='0px' marginLeft='0' marginRight='0' marginTop='0px' />
                         <Ionicons name='search' size={25} color={"black"} className='right-[40px] ' />
                     </View>
 

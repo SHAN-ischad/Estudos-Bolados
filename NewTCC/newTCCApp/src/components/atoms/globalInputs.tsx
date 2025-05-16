@@ -1,6 +1,8 @@
 import { TextInput } from 'react-native';
 
 
+import type { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
+
 interface GlobalInputsProps {
     placeholder: string;
     value: string,
@@ -11,16 +13,16 @@ interface GlobalInputsProps {
     marginLeft: string,
     marginRight: string,
     marginBottom: string,
-
+    setAtribute: (e: NativeSyntheticEvent<TextInputChangeEventData>) => void,
 }
 
 
-export function GlobalInputs({ placeholder, value, backgroundColor, padding, borderRadius, marginTop, marginLeft, marginRight, marginBottom }: GlobalInputsProps) {
+export function GlobalInputs({ placeholder, value, backgroundColor, padding, borderRadius, marginTop, marginLeft, marginRight, marginBottom, setAtribute }: GlobalInputsProps) {
 
     return (
         <>
-            <TextInput placeholder={placeholder} value={value}
-                className={`w-full p-[${padding}] max-sm:w-full rounded-[${borderRadius}] max-sm:w-[300px] border-[1px] duration-[300ms] focus:rounded-[5px] bg-[${backgroundColor}] mt-[${marginTop}] ml-[${marginLeft}] mr-[${marginRight}] mb-[${marginBottom}]`} />
+            <TextInput placeholder={placeholder} onChange={setAtribute} value={value}
+                className={`w-full p-[${padding}] max-sm:w-full rounded-[${borderRadius}] text-[12pt] max-sm:w-[300px] border-[1px] duration-[300ms] focus:rounded-[5px] ${backgroundColor} mt-[${marginTop}] ml-[${marginLeft}] mr-[${marginRight}] mb-[${marginBottom}]`} />
 
         </>
     );

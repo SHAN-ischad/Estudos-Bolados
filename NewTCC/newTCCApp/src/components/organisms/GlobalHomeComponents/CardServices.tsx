@@ -8,7 +8,7 @@ interface CardServicesProps {
 export default function CardServices({ image, title, description }: CardServicesProps) {
     return (
 
-        <View className='h-[300px] w-[280px] rounded-2xl shadow-md bg-white'>
+        <View className='h-[300px] hover:rotate-3 cursor-pointer duration-200 w-[280px] rounded-2xl shadow-md bg-white'>
             <Image
                 className=' mb-[10px]'
                 style={{

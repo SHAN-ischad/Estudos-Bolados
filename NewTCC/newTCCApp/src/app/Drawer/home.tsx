@@ -1,5 +1,5 @@
-import { View } from 'react-native';
 import { GlobalHeader } from '@/src/components/organisms/header';
+import { View } from 'react-native';
 import { BodyHome } from '../../components/screens/homePages/bodyHome';
 import { BottomHome } from '../../components/screens/homePages/bottomHome';
 
