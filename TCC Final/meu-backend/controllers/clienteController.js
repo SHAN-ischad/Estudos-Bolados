@@ -1,7 +1,6 @@
 const Cliente = require('../models/clienteModel');
 
 const criarCliente = async (req, res) => {
-
   try {
     const { senha, ...resto } = req.body;
     const senhaHash = await bcrypt.hash(senha, 10);
@@ -19,7 +18,7 @@ const criarCliente = async (req, res) => {
     }
 
     const cliente = new Cliente({ ...resto, senha: senhaHash });
-    const salvo = await novoCliente.save();
+    const salvo = await cliente.save(); // <-- corrigido aqui
     res.status(201).json(salvo);
   } catch (err) {
     res.status(400).json({ error: err.message });
