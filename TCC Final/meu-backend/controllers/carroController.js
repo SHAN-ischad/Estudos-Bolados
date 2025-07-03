@@ -1,5 +1,13 @@
 const Carro = require('../models/carroModel');
 
+const checkPlaca = async (req, res) => {
+    const { placa } = req.query;
+    const carro = await Carro.findOne({ placa });
+    res.json({ exists: !!carro });
+};
+
+exports.checkPlaca = checkPlaca;
+
 exports.criarCarro = async (req, res) => {
  try {
     // Verifica se já existe um carro com a mesma placa

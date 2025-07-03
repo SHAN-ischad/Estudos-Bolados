@@ -14,6 +14,7 @@ const agendamentoRoutes = require('./routes/agendamentoRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const notificacaoRoutes = require('./routes/notificacaoRoutes');
 const usuariosRoutes = require('./routes/usuarioRoutes')
+const authRoutes = require('./routes/authRoutes');
 const app = express();
 
 // Configura o CORS para aceitar requisições de qualquer origem
@@ -34,6 +35,7 @@ app.use('/api/agendamentos', agendamentoRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/notificacoes', notificacaoRoutes);
 app.use('/api/usuarios', usuariosRoutes);
+app.use('/api/auth', authRoutes);
 
 // Conexão com o MongoDB
 mongoose.connect(process.env.DATABASE_URL)

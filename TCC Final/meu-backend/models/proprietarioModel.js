@@ -4,11 +4,9 @@ const mongoose = require('mongoose');
 const ProprietarioSchema = new mongoose.Schema({
     usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario', required: true },
     nomeOficina: String,
-    cnpj: String,
-    endereco: String,
-    cidadeOficina: String,
-    horarioFuncionamento: String,
-    descricaoOficina: String,
+    oficinas: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Oficina' }],
+    ownerImage: String
+
     // outros campos exclusivos de proprietário
 });
 

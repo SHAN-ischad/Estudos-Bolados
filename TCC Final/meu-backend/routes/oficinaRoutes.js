@@ -8,5 +8,5 @@ router.put('/:id', oficinaController.atualizarOficina);
 router.delete('/:id', oficinaController.deletarOficina);
 router.post('/login', oficinaController.loginOficina);
 
-
+router.get('/check-cnpj', oficinaController.checkCnpj)
 module.exports = router;

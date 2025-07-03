@@ -74,10 +74,17 @@ const loginOficina = async (req, res) => {
   }
 };
 
+const checkCnpj = async (req, res) => {
+    const { cnpj } = req.query;
+    const oficina = await Oficina.findOne({ cnpj });
+    res.json({ exists: !!oficina });
+};
+
 module.exports = {
   criarOficina,
   listarOficinas,
   atualizarOficina,
   deletarOficina,
   loginOficina,
+  checkCnpj
 };

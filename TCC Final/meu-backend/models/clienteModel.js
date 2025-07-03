@@ -5,7 +5,8 @@ const ClienteSchema = new mongoose.Schema({
   usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario', required: true },
   carros: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Carro' }],
   historicoCarros: [{ type: String }],
-  historicoServicos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Servico' }]
+  historicoServicos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Servico' }],
+  clientImage: String
   // outros campos exclusivos de cliente
 });
 

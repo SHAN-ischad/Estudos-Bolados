@@ -2,6 +2,7 @@ const Usuario = require('../models/usuarioModel');
 const Cliente = require('../models/clienteModel');
 const Carro = require('../models/carroModel');
 const Proprietario = require('../models/proprietarioModel');
+const Oficina = require('../models/oficinaModel');
 const bcrypt = require('bcrypt');
 
 const criarUsuario = async (req, res) => {
@@ -43,20 +44,31 @@ const criarUsuario = async (req, res) => {
             });
             await carro.save();
         } else if (tipoConta === 'proprietário') {
-            // Cria proprietário
+
+            // Cria proprietário (sem o campo oficinas)
             const proprietario = new Proprietario({
                 usuario: usuarioSalvo._id,
+                // outros campos exclusivos de proprietário, se houver
+            });
+            const proprietarioSalvo = await proprietario.save();
+
+            // Cria oficina vinculada ao proprietário
+            const oficina = new Oficina({
+                proprietario: proprietarioSalvo._id,
                 nomeOficina: resto.nomeOficina,
                 cnpj: resto.cnpj,
                 endereco: resto.endereco,
                 cidadeOficina: resto.cidadeOficina,
                 horarioFuncionamento: resto.horarioFuncionamento,
                 descricaoOficina: resto.descricaoOficina,
-                ownerImage: resto.ownerImage,
                 proprietyImage: resto.proprietyImage,
-                // outros campos de proprietário
+                // outros campos de oficina
             });
-            await proprietario.save();
+            const oficinaSalva = await oficina.save();
+
+            // Atualiza o proprietário para adicionar a oficina ao array
+            proprietarioSalvo.oficinas.push(oficinaSalva._id);
+            await proprietarioSalvo.save();
         }
 
         res.status(201).json(usuarioSalvo);
@@ -67,4 +79,20 @@ const criarUsuario = async (req, res) => {
 
 };
 
-module.exports = { criarUsuario }
+const checkEmail = async (req, res) => {
+    const { email } = req.query;
+    const usuario = await Usuario.findOne({ email });
+    res.json({ exists: !!usuario });
+};
+
+const checkCpf = async (req, res) => {
+    const { cpf } = req.query;
+    const usuario = await Usuario.findOne({ cpf });
+    res.json({ exists: !!usuario });
+};
+
+module.exports = {
+    criarUsuario,
+    checkEmail,
+    checkCpf
+};
