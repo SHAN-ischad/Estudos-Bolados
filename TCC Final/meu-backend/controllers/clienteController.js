@@ -1,4 +1,7 @@
 const Cliente = require('../models/clienteModel');
+const Carro = require('../models/carroModel');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const criarCliente = async (req, res) => {
   try {
@@ -56,8 +59,6 @@ const deletarCliente = async (req, res) => {
   }
 };
 
-const bcrypt = require('bcrypt');
-
 exports.criarCliente = async (req, res) => {
   try {
     const { senha, ...resto } = req.body;
@@ -69,8 +70,6 @@ exports.criarCliente = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
-
-const jwt = require('jsonwebtoken');
 
 const loginCliente = async (req, res) => {
   const { email, senha } = req.body;
@@ -98,6 +97,20 @@ const buscarClientePorId = async (req, res) => {
   }
 };
 
+const getVeiculosCliente = async (req, res) => {
+  try {
+    // Supondo que req.userId está disponível via autenticação
+    const cliente = await Cliente.findOne({ usuario: req.userId }).populate('carro');
+    if (!cliente) return res.status(404).json({ error: 'Cliente não encontrado' });
+
+    res.json({
+      carro: cliente.carro, // objeto do carro principal
+      outrosVeiculos: cliente.outrosCarros || [], // se houver outros veículos
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Erro ao buscar veículos.' });
+  }
+};
 
 module.exports = {
   criarCliente,
@@ -106,4 +119,5 @@ module.exports = {
   deletarCliente,
   loginCliente,
   buscarClientePorId,
+  getVeiculosCliente,
 };

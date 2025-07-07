@@ -56,20 +56,13 @@ exports.cadastrarCliente = async (req, res) => {
         // Crie o cliente, associando ao usuário
         const cliente = await Cliente.create({ ...req.body.cliente, usuario: usuario._id });
 
-        // Busque o cliente completo (com imagens e outros campos)
+        // Busque o cliente completo (com a imagem)
         const clienteCompleto = await Cliente.findOne({ usuario: usuario._id });
-
-        // Se quiser buscar o carro também:
-        let carro = null;
-        if (clienteCompleto.carro) {
-            carro = await Carro.findById(clienteCompleto.carro);
-        }
 
         res.json({
             usuario: {
                 ...usuario.toObject(),
-                ...clienteCompleto.toObject(),
-                carro: carro ? carro.toObject() : null,
+                ...clienteCompleto.toObject(), // inclui clientImage
             }
         });
     } catch (err) {
